@@ -11,7 +11,7 @@
 :root{
   --bg:#0f172a;--bg2:#1e293b;--bg3:#263248;
   --card:#1e293b;--border:#334155;
-  --green:#10b981;--red:#ef4444;--blue:#3b82f6;--yellow:#f59e0b;--purple:#8b5cf6;
+  --green:#10b981;--red:#ef4444;--blue:#3b82f6;--yellow:#f59e0b;--purple:#8b5cf6;--cyan:#06b6d4;
   --text:#f1f5f9;--text2:#94a3b8;--text3:#475569;
   --font:'Segoe UI',sans-serif;
 }
@@ -35,20 +35,16 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .login-hint{font-size:11px;color:var(--text3);background:var(--bg3);border-radius:8px;padding:10px 12px;line-height:1.9;margin-top:12px}
 .err{color:var(--red);font-size:12px;margin-top:8px;text-align:center}
 
-/* APP LAYOUT - DESKTOP */
+/* APP */
 #app{display:none;min-height:100vh}
-
-/* BOTTOM NAV - MOBILE */
 .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);z-index:100;padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
 .bnav-items{display:flex;justify-content:space-around;align-items:center}
-.bnav-item{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 10px;cursor:pointer;color:var(--text3);transition:.15s;border-radius:8px;min-width:52px}
+.bnav-item{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;cursor:pointer;color:var(--text3);transition:.15s;border-radius:8px;min-width:48px}
 .bnav-item.active{color:var(--blue)}
-.bnav-item .bicon{font-size:20px}
-.bnav-item .blabel{font-size:10px;font-weight:500}
-
-/* SIDEBAR - DESKTOP ONLY */
+.bnav-item .bicon{font-size:19px}
+.bnav-item .blabel{font-size:9.5px;font-weight:500}
 .sidebar{width:200px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;bottom:0;left:0;z-index:50}
-.sidebar-logo{padding:18px 14px;border-bottom:1px solid var(--border)}
+.sidebar-logo{padding:16px 14px;border-bottom:1px solid var(--border)}
 .sidebar-logo h2{font-size:13px;font-weight:700}
 .sidebar-logo p{font-size:10px;color:var(--text3);margin-top:2px}
 .nav{flex:1;padding:10px 8px;overflow-y:auto}
@@ -63,72 +59,78 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .user-info{flex:1;min-width:0}
 .user-name{font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .user-role{font-size:10px;color:var(--text3)}
-
-/* MAIN */
 .main{margin-left:200px;min-height:100vh;padding-bottom:20px}
-.topbar{position:sticky;top:0;z-index:40;background:rgba(15,23,42,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 20px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.topbar{position:sticky;top:0;z-index:40;background:rgba(15,23,42,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 18px;height:52px;display:flex;align-items:center;justify-content:space-between}
 .topbar-title{font-size:15px;font-weight:700}
-.topbar-right{display:flex;align-items:center;gap:10px}
-.topbar-date{font-size:12px;color:var(--text2)}
+.topbar-right{display:flex;align-items:center;gap:8px}
+.topbar-date{font-size:11px;color:var(--text2)}
 .topbar-logout{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:5px 10px;border-radius:6px;font-size:11px;cursor:pointer}
-.page{padding:16px;display:none}
+.page{padding:14px 16px;display:none}
 .page.active{display:block}
 
 /* STATS */
-.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px}
 .stat-label{font-size:10px;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
 .stat-value{font-size:20px;font-weight:700;font-family:'Courier New',monospace}
 .stat-change{font-size:11px;color:var(--text3);margin-top:3px}
 .stat-card.green .stat-value{color:var(--green)}
 .stat-card.red .stat-value{color:var(--red)}
-.stat-card.blue .stat-value{color:var(--blue)}
 .stat-card.yellow .stat-value{color:var(--yellow)}
 
 /* FORMS */
-.form-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px}
 .form-card h3{font-size:13px;font-weight:600;margin-bottom:14px;color:var(--text2)}
 .f-group{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
 .f-label{font-size:12px;color:var(--text2);font-weight:500}
 .f-input,.f-select{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:11px 12px;color:var(--text);font-size:15px;font-family:var(--font);outline:none;width:100%}
 .f-input:focus,.f-select:focus{border-color:var(--blue)}
 .f-input::placeholder{color:var(--text3)}
+
+/* PAYMENT TYPE PILLS */
+.pay-type-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+.pay-pill{padding:10px 6px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;font-size:13px;font-weight:500;text-align:center;transition:.15s}
+.pay-pill:hover{border-color:var(--blue);color:var(--blue)}
+.pay-pill.active.cash{border-color:var(--green);background:rgba(16,185,129,.1);color:var(--green)}
+.pay-pill.active.credit{border-color:var(--yellow);background:rgba(245,158,11,.1);color:var(--yellow)}
+.pay-pill.active.account{border-color:var(--cyan);background:rgba(6,182,212,.1);color:var(--cyan)}
+
+.credit-fields{display:none;padding:12px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:8px;margin-bottom:12px}
+.credit-fields.show{display:block}
 .submit-btn{width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;margin-top:4px}
 .submit-btn.green{background:var(--green)}
 .submit-btn.yellow{background:var(--yellow);color:#000}
 
-/* CREDIT SECTION */
-.credit-toggle{display:flex;align-items:center;gap:10px;padding:12px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:8px;cursor:pointer;font-size:13px;color:var(--text2);margin-bottom:12px}
-.credit-toggle input{width:18px;height:18px;cursor:pointer;accent-color:var(--yellow)}
-.credit-fields{display:none;padding:12px;background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:8px;margin-bottom:12px}
-.credit-fields.show{display:block}
-
-/* TABLE */
-.table-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:16px}
-.table-card-head{padding:12px 14px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600}
-table{width:100%;border-collapse:collapse}
-th{padding:8px 12px;font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;text-align:left;background:rgba(30,41,59,.5)}
-td{padding:10px 12px;font-size:13px;border-bottom:1px solid rgba(51,65,85,.4);vertical-align:middle}
-tr:last-child td{border-bottom:none}
-.badge{display:inline-flex;padding:3px 9px;border-radius:12px;font-size:11px;font-weight:500}
-.badge.green{background:rgba(16,185,129,.12);color:var(--green)}
-.badge.red{background:rgba(239,68,68,.12);color:var(--red)}
-.badge.yellow{background:rgba(245,158,11,.12);color:var(--yellow)}
-.badge.blue{background:rgba(59,130,246,.12);color:var(--blue)}
-.del-btn{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:4px 6px}
-.del-btn:hover{color:var(--red)}
-.empty{text-align:center;padding:28px;color:var(--text3);font-size:13px}
-
-/* SALE ROW CARD (mobile friendly) */
+/* CARDS */
 .sale-row-card{background:var(--bg3);border-radius:10px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
 .sale-row-left .product{font-weight:600;font-size:14px}
 .sale-row-left .meta{font-size:11px;color:var(--text3);margin-top:3px}
-.sale-row-right{text-align:right}
+.sale-row-right{text-align:right;flex-shrink:0;margin-left:10px}
 .sale-row-right .amount{font-size:16px;font-weight:700;color:var(--green)}
-.sale-row-right .type{font-size:11px;margin-top:3px}
+.sale-row-right .type{font-size:11px;margin-top:3px;display:flex;align-items:center;gap:5px;justify-content:flex-end}
+.badge{display:inline-flex;padding:2px 8px;border-radius:10px;font-size:10.5px;font-weight:500}
+.badge.green{background:rgba(16,185,129,.15);color:var(--green)}
+.badge.red{background:rgba(239,68,68,.15);color:var(--red)}
+.badge.yellow{background:rgba(245,158,11,.15);color:var(--yellow)}
+.badge.blue{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge.cyan{background:rgba(6,182,212,.15);color:var(--cyan)}
+.del-btn{background:none;border:none;color:var(--text3);cursor:pointer;font-size:15px;padding:3px 5px}
+.del-btn:hover{color:var(--red)}
+.empty{text-align:center;padding:24px;color:var(--text3);font-size:13px}
+
+/* DATE HISTORY */
+.date-section{margin-bottom:16px}
+.date-header{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.date-header-left{font-weight:600;font-size:14px}
+.date-header-right{display:flex;gap:10px;align-items:center;font-size:12px}
+.date-stats{display:flex;gap:12px}
+.date-stat{font-size:12px}
+.date-stat span{font-weight:600}
+.date-content{display:none}
+.date-content.open{display:block}
 
 /* COMPARE */
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .compare-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
 .compare-title{font-size:11px;color:var(--text3);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
 .compare-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(51,65,85,.3);font-size:13px}
@@ -150,31 +152,31 @@ tr:last-child td{border-bottom:none}
 .report-box-title{font-size:14px;font-weight:700;margin-bottom:14px}
 
 /* SECTION TITLE */
-.sec-title{font-size:12px;font-weight:600;color:var(--text2);margin:16px 0 10px;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.sec-title{font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 10px;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
 .sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
 
+/* DATE FILTER */
+.date-filter{display:flex;gap:8px;margin-bottom:14px;align-items:center;flex-wrap:wrap}
+.date-filter-input{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 10px;color:var(--text);font-size:13px;font-family:var(--font);outline:none}
+.date-filter-input:focus{border-color:var(--blue)}
+.filter-btn{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;font-size:12px;font-family:var(--font)}
+.filter-btn.active{border-color:var(--blue);background:rgba(59,130,246,.1);color:var(--blue)}
+
 /* TOAST */
-.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 18px;font-size:13px;z-index:999;opacity:0;transition:.3s;white-space:nowrap}
+.toast{position:fixed;bottom:76px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 18px;font-size:13px;z-index:999;opacity:0;transition:.3s;white-space:nowrap;pointer-events:none}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.success{border-color:var(--green);color:var(--green)}
 .toast.error{border-color:var(--red);color:var(--red)}
 
-/* DESKTOP */
-@media(min-width:640px){
-  .sidebar{display:flex}
-  .bottom-nav{display:none}
-  .main{margin-left:200px;padding-bottom:20px}
-  .stats-row{grid-template-columns:repeat(4,1fr)}
-  .toast{bottom:20px}
-  .page{padding:20px 24px}
-}
+/* ADMIN ONLY */
+.admin-section{display:none}
 
-/* MOBILE */
+@media(min-width:640px){
+  .sidebar{display:flex}.bottom-nav{display:none}.main{margin-left:200px;padding-bottom:20px}
+  .stats-row{grid-template-columns:repeat(4,1fr)}.toast{bottom:20px}.page{padding:20px 24px}
+}
 @media(max-width:639px){
-  .sidebar{display:none}
-  .bottom-nav{display:block}
-  .main{margin-left:0;padding-bottom:80px}
-  .topbar{padding:0 14px}
+  .sidebar{display:none}.bottom-nav{display:block}.main{margin-left:0;padding-bottom:76px}.topbar{padding:0 14px}
 }
 </style>
 </head>
@@ -194,11 +196,11 @@ tr:last-child td{border-bottom:none}
     </div>
     <div class="form-group">
       <label>Email</label>
-      <input type="email" id="l-email" placeholder="email@example.com" value="staff@aqua.com">
+      <input type="email" id="l-email" placeholder="Email likho...">
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" id="l-pass" placeholder="••••••••" value="staff123">
+      <input type="password" id="l-pass" placeholder="Password likho...">
     </div>
     <button class="login-btn" onclick="doLogin()">Sign In →</button>
     <div class="err" id="login-err"></div>
@@ -212,51 +214,40 @@ tr:last-child td{border-bottom:none}
 
 <!-- APP -->
 <div id="app">
-
-  <!-- DESKTOP SIDEBAR -->
   <div class="sidebar">
-    <div class="sidebar-logo">
-      <h2>💰 Finance</h2>
-      <p>Daily Tracker</p>
-    </div>
+    <div class="sidebar-logo"><h2>💰 Finance</h2><p>Daily Tracker</p></div>
     <nav class="nav">
       <div class="nav-section">Daily</div>
       <div class="nav-item active" onclick="showPage('today',this)"><span class="icon">📅</span><span>Today</span></div>
-      <div class="nav-item" onclick="showPage('yesterday',this)"><span class="icon">🕐</span><span>Yesterday</span></div>
       <div class="nav-section">Add</div>
       <div class="nav-item" onclick="showPage('add-sale',this)"><span class="icon">💵</span><span>Add Sale</span></div>
       <div class="nav-item" onclick="showPage('add-expense',this)"><span class="icon">💸</span><span>Add Expense</span></div>
       <div class="nav-item" onclick="showPage('wholesale',this)"><span class="icon">🏭</span><span>Wholesale</span></div>
-      <div class="nav-section admin-only" style="display:none">Admin</div>
-      <div class="nav-item admin-only" onclick="showPage('monthly',this)" style="display:none"><span class="icon">📊</span><span>Monthly</span></div>
-      <div class="nav-item admin-only" onclick="showPage('reports',this)" style="display:none"><span class="icon">📋</span><span>Reports</span></div>
+      <div class="nav-section admin-section">Admin</div>
+      <div class="nav-item admin-section" onclick="showPage('history',this)"><span class="icon">📆</span><span>Pichla Hisab</span></div>
+      <div class="nav-item admin-section" onclick="showPage('monthly',this)"><span class="icon">📊</span><span>Monthly</span></div>
+      <div class="nav-item admin-section" onclick="showPage('reports',this)"><span class="icon">📋</span><span>Reports</span></div>
     </nav>
     <div class="sidebar-user">
       <div class="user-row" onclick="doLogout()">
         <div class="user-av" id="user-av">ST</div>
-        <div class="user-info">
-          <div class="user-name" id="user-name">Staff</div>
-          <div class="user-role" id="user-role">Staff Member</div>
-        </div>
+        <div class="user-info"><div class="user-name" id="user-name">Staff</div><div class="user-role" id="user-role">Staff</div></div>
         <span style="font-size:12px;color:var(--text3)">→</span>
       </div>
     </div>
   </div>
 
-  <!-- MOBILE BOTTOM NAV -->
   <div class="bottom-nav">
     <div class="bnav-items">
       <div class="bnav-item active" onclick="showPage('today',this)"><div class="bicon">📅</div><div class="blabel">Today</div></div>
       <div class="bnav-item" onclick="showPage('add-sale',this)"><div class="bicon">💵</div><div class="blabel">Sale</div></div>
       <div class="bnav-item" onclick="showPage('add-expense',this)"><div class="bicon">💸</div><div class="blabel">Expense</div></div>
       <div class="bnav-item" onclick="showPage('wholesale',this)"><div class="bicon">🏭</div><div class="blabel">Wholesale</div></div>
-      <div class="bnav-item" onclick="showPage('yesterday',this)"><div class="bicon">🕐</div><div class="blabel">Yesterday</div></div>
-      <div class="bnav-item admin-only" onclick="showPage('monthly',this)" style="display:none"><div class="bicon">📊</div><div class="blabel">Monthly</div></div>
-      <div class="bnav-item admin-only" onclick="showPage('reports',this)" style="display:none"><div class="bicon">📋</div><div class="blabel">Reports</div></div>
+      <div class="bnav-item admin-section" onclick="showPage('history',this)"><div class="bicon">📆</div><div class="blabel">History</div></div>
+      <div class="bnav-item admin-section" onclick="showPage('monthly',this)"><div class="bicon">📊</div><div class="blabel">Monthly</div></div>
     </div>
   </div>
 
-  <!-- MAIN -->
   <div class="main">
     <div class="topbar">
       <div class="topbar-title" id="page-title">📅 Today</div>
@@ -269,125 +260,63 @@ tr:last-child td{border-bottom:none}
     <!-- TODAY -->
     <div class="page active" id="page-today">
       <div class="stats-row">
-        <div class="stat-card green">
-          <div class="stat-label">Today Sales</div>
-          <div class="stat-value" id="t-sales">PKR 0</div>
-          <div class="stat-change" id="t-sales-count">0 transactions</div>
-        </div>
-        <div class="stat-card red">
-          <div class="stat-label">Today Expenses</div>
-          <div class="stat-value" id="t-exp">PKR 0</div>
-          <div class="stat-change" id="t-exp-count">0 entries</div>
-        </div>
-        <div class="stat-card" id="profit-card">
-          <div class="stat-label">Today Profit</div>
-          <div class="stat-value" id="t-profit">PKR 0</div>
-          <div class="stat-change">Sales - Expenses</div>
-        </div>
-        <div class="stat-card yellow">
-          <div class="stat-label">Udhar (Credit)</div>
-          <div class="stat-value" id="t-credit">PKR 0</div>
-          <div class="stat-change" id="t-credit-count">0 customers</div>
-        </div>
+        <div class="stat-card green"><div class="stat-label">Today Sales</div><div class="stat-value" id="t-sales">PKR 0</div><div class="stat-change" id="t-sales-count">0 transactions</div></div>
+        <div class="stat-card red"><div class="stat-label">Today Expenses</div><div class="stat-value" id="t-exp">PKR 0</div><div class="stat-change" id="t-exp-count">0 entries</div></div>
+        <div class="stat-card" id="profit-card"><div class="stat-label">Today Profit</div><div class="stat-value" id="t-profit">PKR 0</div><div class="stat-change">Sales - Expenses</div></div>
+        <div class="stat-card yellow"><div class="stat-label">Udhar (Credit)</div><div class="stat-value" id="t-credit">PKR 0</div><div class="stat-change" id="t-credit-count">0 customers</div></div>
       </div>
-
-      <div class="sec-title">Today's Sales</div>
+      <div class="sec-title">Aaj Ki Sales</div>
       <div id="today-sales-list"></div>
-
-      <div class="sec-title">Today's Expenses</div>
+      <div class="sec-title">Aaj Ke Kharche</div>
       <div id="today-exp-list"></div>
-    </div>
-
-    <!-- YESTERDAY -->
-    <div class="page" id="page-yesterday">
-      <div class="compare-grid">
-        <div class="compare-card">
-          <div class="compare-title">📅 Today</div>
-          <div class="compare-item"><span>Sales</span><span style="color:var(--green);font-weight:600" id="cy-ts">PKR 0</span></div>
-          <div class="compare-item"><span>Expenses</span><span style="color:var(--red);font-weight:600" id="cy-te">PKR 0</span></div>
-          <div class="compare-item"><span>Profit</span><span style="font-weight:600" id="cy-tp">PKR 0</span></div>
-        </div>
-        <div class="compare-card">
-          <div class="compare-title">🕐 Yesterday</div>
-          <div class="compare-item"><span>Sales</span><span style="color:var(--green);font-weight:600" id="cy-ys">PKR 0</span></div>
-          <div class="compare-item"><span>Expenses</span><span style="color:var(--red);font-weight:600" id="cy-ye">PKR 0</span></div>
-          <div class="compare-item"><span>Profit</span><span style="font-weight:600" id="cy-yp">PKR 0</span></div>
-        </div>
-      </div>
-      <div class="sec-title">Yesterday Sales</div>
-      <div id="yest-sales-list"></div>
-      <div class="sec-title">Yesterday Expenses</div>
-      <div id="yest-exp-list"></div>
     </div>
 
     <!-- ADD SALE -->
     <div class="page" id="page-add-sale">
       <div class="form-card">
-        <h3>💵 Add New Sale</h3>
+        <h3>💵 Nai Sale Add Karo</h3>
         <div class="f-group">
-          <label class="f-label">Product Name *</label>
+          <label class="f-label">Product Ka Naam *</label>
           <input class="f-input" id="s-product" placeholder="e.g. Water Filter, Cartridge...">
         </div>
         <div class="f-group">
           <label class="f-label">Amount (PKR) *</label>
           <input class="f-input" id="s-amount" type="number" inputmode="numeric" placeholder="0">
         </div>
-
-        <label class="credit-toggle">
-          <input type="checkbox" id="s-credit-chk" onchange="toggleCredit()">
-          ⚠️ Credit Sale (Udhar)? Customer details required
-        </label>
-
-        <div class="credit-fields" id="credit-fields">
-          <div class="f-group">
-            <label class="f-label">Customer Name *</label>
-            <input class="f-input" id="s-cname" placeholder="Customer ka naam">
-          </div>
-          <div class="f-group">
-            <label class="f-label">Phone Number *</label>
-            <input class="f-input" id="s-cphone" placeholder="03XX-XXXXXXX" type="tel" inputmode="tel">
-          </div>
-          <div class="f-group">
-            <label class="f-label">Address (Optional)</label>
-            <input class="f-input" id="s-caddr" placeholder="Ghar ka pata">
+        <div class="f-group">
+          <label class="f-label">Payment Type *</label>
+          <div class="pay-type-row">
+            <div class="pay-pill cash active" onclick="selectPayType('Cash',this)">💵 Cash</div>
+            <div class="pay-pill credit" onclick="selectPayType('Credit',this)">⚠️ Udhar</div>
+            <div class="pay-pill account" onclick="selectPayType('Account',this)">🏦 Account</div>
           </div>
         </div>
-
+        <div class="credit-fields" id="credit-fields">
+          <div class="f-group"><label class="f-label">Customer Ka Naam *</label><input class="f-input" id="s-cname" placeholder="Customer ka naam"></div>
+          <div class="f-group"><label class="f-label">Phone Number *</label><input class="f-input" id="s-cphone" placeholder="03XX-XXXXXXX" type="tel" inputmode="tel"></div>
+          <div class="f-group"><label class="f-label">Pata (Optional)</label><input class="f-input" id="s-caddr" placeholder="Ghar ka pata"></div>
+        </div>
         <button class="submit-btn green" onclick="addSale()">✓ Sale Add Karo</button>
       </div>
-
-      <div class="sec-title">Today's Sales</div>
+      <div class="sec-title">Aaj Ki Sales</div>
       <div id="sale-page-list"></div>
     </div>
 
     <!-- ADD EXPENSE -->
     <div class="page" id="page-add-expense">
       <div class="form-card">
-        <h3>💸 Add Expense</h3>
-        <div class="f-group">
-          <label class="f-label">Expense Title *</label>
-          <input class="f-input" id="e-title" placeholder="e.g. Dukan ka kiraya, Bijli...">
-        </div>
-        <div class="f-group">
-          <label class="f-label">Amount (PKR) *</label>
-          <input class="f-input" id="e-amount" type="number" inputmode="numeric" placeholder="0">
-        </div>
-        <div class="f-group">
-          <label class="f-label">Category</label>
+        <h3>💸 Kharcha Add Karo</h3>
+        <div class="f-group"><label class="f-label">Kharche Ka Naam *</label><input class="f-input" id="e-title" placeholder="e.g. Kiraya, Bijli, Tankhwa..."></div>
+        <div class="f-group"><label class="f-label">Amount (PKR) *</label><input class="f-input" id="e-amount" type="number" inputmode="numeric" placeholder="0"></div>
+        <div class="f-group"><label class="f-label">Category</label>
           <select class="f-select" id="e-cat">
-            <option>General</option>
-            <option>Shop Rent</option>
-            <option>Electricity</option>
-            <option>Salary</option>
-            <option>Transport</option>
-            <option>Maintenance</option>
-            <option>Purchase</option>
+            <option>General</option><option>Shop Rent</option><option>Electricity</option>
+            <option>Salary</option><option>Transport</option><option>Maintenance</option><option>Purchase</option>
           </select>
         </div>
-        <button class="submit-btn" onclick="addExpense()">✓ Expense Add Karo</button>
+        <button class="submit-btn" onclick="addExpense()">✓ Kharcha Add Karo</button>
       </div>
-
-      <div class="sec-title">Today's Expenses</div>
+      <div class="sec-title">Aaj Ke Kharche</div>
       <div id="exp-page-list"></div>
     </div>
 
@@ -395,45 +324,41 @@ tr:last-child td{border-bottom:none}
     <div class="page" id="page-wholesale">
       <div class="form-card">
         <h3>🏭 Wholesale Purchase</h3>
-        <div class="f-group">
-          <label class="f-label">Supplier Name *</label>
-          <input class="f-input" id="w-supplier" placeholder="Supplier / Company ka naam">
+        <div class="f-group"><label class="f-label">Supplier Ka Naam *</label><input class="f-input" id="w-supplier" placeholder="Supplier / Company"></div>
+        <div class="f-group"><label class="f-label">Total Amount (PKR) *</label><input class="f-input" id="w-amount" type="number" inputmode="numeric" placeholder="0"></div>
+        <div class="f-group"><label class="f-label">Items / Description</label><input class="f-input" id="w-items" placeholder="e.g. 10x Filters..."></div>
+        <div class="f-group"><label class="f-label">Payment Type</label>
+          <select class="f-select" id="w-type"><option>Cash</option><option>Credit</option><option>Partial</option></select>
         </div>
-        <div class="f-group">
-          <label class="f-label">Total Amount (PKR) *</label>
-          <input class="f-input" id="w-amount" type="number" inputmode="numeric" placeholder="0">
-        </div>
-        <div class="f-group">
-          <label class="f-label">Items / Description</label>
-          <input class="f-input" id="w-items" placeholder="e.g. 10x Filters, 20x Cartridges...">
-        </div>
-        <div class="f-group">
-          <label class="f-label">Payment Type</label>
-          <select class="f-select" id="w-type">
-            <option>Cash</option>
-            <option>Credit</option>
-            <option>Partial</option>
-          </select>
-        </div>
-        <div class="f-group">
-          <label class="f-label">Date</label>
-          <input class="f-input" id="w-date" type="date">
-        </div>
+        <div class="f-group"><label class="f-label">Date</label><input class="f-input" id="w-date" type="date"></div>
         <button class="submit-btn yellow" onclick="addWholesale()">✓ Purchase Add Karo</button>
       </div>
-
       <div class="sec-title">Wholesale Purchases</div>
       <div id="wholesale-list"></div>
     </div>
 
-    <!-- MONTHLY (Admin) -->
+    <!-- HISTORY - ADMIN ONLY -->
+    <div class="page" id="page-history">
+      <div style="margin-bottom:14px;padding:12px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:10px;font-size:12.5px;color:var(--text2)">
+        🔒 Ye page sirf Admin dekh sakta hai — pichle har din ka hisab date wise
+      </div>
+      <div class="date-filter">
+        <input type="month" id="history-month" class="date-filter-input" onchange="renderHistory()">
+        <button class="filter-btn active" onclick="setHistoryFilter('all',this)">Sab</button>
+        <button class="filter-btn" onclick="setHistoryFilter('sales',this)">Sales</button>
+        <button class="filter-btn" onclick="setHistoryFilter('expenses',this)">Kharche</button>
+      </div>
+      <div id="history-list"></div>
+    </div>
+
+    <!-- MONTHLY - ADMIN ONLY -->
     <div class="page" id="page-monthly">
       <div class="report-box">
         <div class="report-box-title">📊 Is Mahine Ka Summary</div>
         <div class="report-grid">
           <div class="report-item"><div class="report-item-label">Total Sales</div><div class="report-item-value" style="color:var(--green)" id="m-sales">PKR 0</div></div>
-          <div class="report-item"><div class="report-item-label">Total Expenses</div><div class="report-item-value" style="color:var(--red)" id="m-exp">PKR 0</div></div>
-          <div class="report-item"><div class="report-item-label">Net Profit</div><div class="report-item-value" id="m-profit">PKR 0</div></div>
+          <div class="report-item"><div class="report-item-label">Total Kharche</div><div class="report-item-value" style="color:var(--red)" id="m-exp">PKR 0</div></div>
+          <div class="report-item"><div class="report-item-label">Net Munafa</div><div class="report-item-value" id="m-profit">PKR 0</div></div>
           <div class="report-item"><div class="report-item-label">Udhar (Credit)</div><div class="report-item-value" style="color:var(--yellow)" id="m-credit">PKR 0</div></div>
           <div class="report-item"><div class="report-item-label">Wholesale</div><div class="report-item-value" style="color:var(--purple)" id="m-wholesale">PKR 0</div></div>
           <div class="report-item"><div class="report-item-label">Transactions</div><div class="report-item-value" id="m-count">0</div></div>
@@ -443,25 +368,36 @@ tr:last-child td{border-bottom:none}
         <div class="report-box-title">📅 Pichle Mahine Ka Summary</div>
         <div class="report-grid">
           <div class="report-item"><div class="report-item-label">Total Sales</div><div class="report-item-value" style="color:var(--green)" id="lm-sales">PKR 0</div></div>
-          <div class="report-item"><div class="report-item-label">Total Expenses</div><div class="report-item-value" style="color:var(--red)" id="lm-exp">PKR 0</div></div>
-          <div class="report-item"><div class="report-item-label">Net Profit</div><div class="report-item-value" id="lm-profit">PKR 0</div></div>
+          <div class="report-item"><div class="report-item-label">Total Kharche</div><div class="report-item-value" style="color:var(--red)" id="lm-exp">PKR 0</div></div>
+          <div class="report-item"><div class="report-item-label">Net Munafa</div><div class="report-item-value" id="lm-profit">PKR 0</div></div>
         </div>
       </div>
     </div>
 
-    <!-- REPORTS (Admin) -->
+    <!-- REPORTS - ADMIN ONLY -->
     <div class="page" id="page-reports">
-      <div class="sec-title">Credit (Udhar) Sales</div>
-      <div class="table-card">
-        <table>
-          <thead><tr><th>Date</th><th>Product</th><th>Amount</th><th>Customer</th><th>Phone</th></tr></thead>
+      <div class="sec-title">Udhar (Credit) Sales</div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden">
+          <thead><tr style="border-bottom:1px solid var(--border)">
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Date</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Product</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Amount</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Customer</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Phone</th>
+          </tr></thead>
           <tbody id="credit-report-body"></tbody>
         </table>
       </div>
-      <div class="sec-title">Wholesale Purchases</div>
-      <div class="table-card">
-        <table>
-          <thead><tr><th>Date</th><th>Supplier</th><th>Amount</th><th>Type</th></tr></thead>
+      <div class="sec-title" style="margin-top:18px">Wholesale Purchases</div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden">
+          <thead><tr style="border-bottom:1px solid var(--border)">
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Date</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Supplier</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Amount</th>
+            <th style="padding:9px 12px;font-size:10px;color:var(--text3);text-align:left;background:var(--bg2)">Type</th>
+          </tr></thead>
           <tbody id="wholesale-report-body"></tbody>
         </table>
       </div>
@@ -490,132 +426,152 @@ const USERS = {
   'manager@aqua.com':{ pass:'mgr123',    role:'admin',  name:'Manager' },
 };
 
-let currentUser = null;
-let sales = [], expenses = [], wholesale = [];
+let currentUser=null, sales=[], expenses=[], wholesale=[];
+let selectedPayType='Cash', historyFilter='all';
 
+// ========== ROLE SWITCH ==========
 function switchRole(role, el) {
   document.querySelectorAll('.role-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
-  if(role==='admin'){document.getElementById('l-email').value='admin@aqua.com';document.getElementById('l-pass').value='admin123';}
-  else{document.getElementById('l-email').value='staff@aqua.com';document.getElementById('l-pass').value='staff123';}
+  // Clear fields — no auto-fill
+  document.getElementById('l-email').value='';
+  document.getElementById('l-pass').value='';
 }
 
+// ========== LOGIN ==========
 function doLogin() {
-  const email = document.getElementById('l-email').value.trim();
-  const pass = document.getElementById('l-pass').value.trim();
-  const u = USERS[email];
-  if (!u || u.pass !== pass) { document.getElementById('login-err').textContent = 'Invalid email ya password!'; return; }
-  currentUser = { email, role: u.role, name: u.name };
-  document.getElementById('login-screen').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  document.getElementById('user-name').textContent = u.name;
-  document.getElementById('user-role').textContent = u.role === 'admin' ? 'Administrator' : 'Staff';
-  document.getElementById('user-av').textContent = u.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-  if (u.role === 'admin') {
-    document.querySelectorAll('.admin-only').forEach(el => el.style.display = '');
+  const email=document.getElementById('l-email').value.trim();
+  const pass=document.getElementById('l-pass').value.trim();
+  const errEl=document.getElementById('login-err');
+  errEl.textContent='';
+  if(!email||!pass){errEl.textContent='Email aur password likho!';return;}
+  const u=USERS[email];
+  if(!u||u.pass!==pass){errEl.textContent='Galat email ya password!';return;}
+  currentUser={email,role:u.role,name:u.name};
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('user-name').textContent=u.name;
+  document.getElementById('user-role').textContent=u.role==='admin'?'Administrator':'Staff';
+  document.getElementById('user-av').textContent=u.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('topbar-date').textContent=new Date().toLocaleDateString('en-PK',{weekday:'short',day:'numeric',month:'short'});
+  document.getElementById('w-date').value=todayStr();
+  // Set history month to current
+  const hm=document.getElementById('history-month');
+  const d=new Date(); hm.value=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+  if(u.role==='admin'){
+    document.querySelectorAll('.admin-section').forEach(el=>el.style.display='');
   }
-  document.getElementById('topbar-date').textContent = new Date().toLocaleDateString('en-PK',{weekday:'short',day:'numeric',month:'short'});
-  document.getElementById('w-date').value = todayStr();
   loadData();
 }
 
-function doLogout() {
-  if (!confirm('Logout?')) return;
-  location.reload();
+function doLogout(){if(!confirm('Logout?'))return;location.reload();}
+
+// ========== UTILS ==========
+function todayStr(){return new Date().toISOString().split('T')[0];}
+function yesterdayStr(){const d=new Date();d.setDate(d.getDate()-1);return d.toISOString().split('T')[0];}
+function timeStr(){return new Date().toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'});}
+function thisMonth(){const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;}
+function lastMonth(){const d=new Date();d.setMonth(d.getMonth()-1);return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;}
+function fmt(n){return'PKR '+Number(n||0).toLocaleString('en-PK');}
+function fmtDateLabel(dateStr){
+  const d=new Date(dateStr+'T00:00:00');
+  const today=todayStr(),yest=yesterdayStr();
+  if(dateStr===today)return'📅 Aaj — '+d.toLocaleDateString('en-PK',{weekday:'long',day:'numeric',month:'long'});
+  if(dateStr===yest)return'🕐 Kal — '+d.toLocaleDateString('en-PK',{weekday:'long',day:'numeric',month:'long'});
+  return'📆 '+d.toLocaleDateString('en-PK',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
 }
 
-function todayStr() { return new Date().toISOString().split('T')[0]; }
-function yesterdayStr() { const d=new Date(); d.setDate(d.getDate()-1); return d.toISOString().split('T')[0]; }
-function timeStr() { return new Date().toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'}); }
-function thisMonth() { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`; }
-function lastMonth() { const d=new Date(); d.setMonth(d.getMonth()-1); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`; }
-function fmt(n) { return 'PKR '+Number(n||0).toLocaleString('en-PK'); }
-
-function loadData() {
-  db.collection('daily_sales').orderBy('createdAt','desc').onSnapshot(snap => {
-    sales = snap.docs.map(d=>({id:d.id,...d.data()}));
+// ========== FIREBASE ==========
+function loadData(){
+  db.collection('daily_sales').orderBy('createdAt','desc').onSnapshot(snap=>{
+    sales=snap.docs.map(d=>({id:d.id,...d.data()}));
     renderAll();
-  }, () => { sales=[]; renderAll(); });
-  db.collection('daily_expenses').orderBy('createdAt','desc').onSnapshot(snap => {
-    expenses = snap.docs.map(d=>({id:d.id,...d.data()}));
+  },()=>{sales=[];renderAll();});
+  db.collection('daily_expenses').orderBy('createdAt','desc').onSnapshot(snap=>{
+    expenses=snap.docs.map(d=>({id:d.id,...d.data()}));
     renderAll();
-  }, () => { expenses=[]; renderAll(); });
-  db.collection('wholesale').orderBy('createdAt','desc').onSnapshot(snap => {
-    wholesale = snap.docs.map(d=>({id:d.id,...d.data()}));
-    renderWholesalePage();
-    renderWholesaleReport();
-  }, () => { wholesale=[]; renderWholesalePage(); });
+  },()=>{expenses=[];renderAll();});
+  db.collection('wholesale').orderBy('createdAt','desc').onSnapshot(snap=>{
+    wholesale=snap.docs.map(d=>({id:d.id,...d.data()}));
+    renderWholesalePage();renderWholesaleReport();
+  },()=>{wholesale=[];renderWholesalePage();});
 }
 
-function addSale() {
-  const product = document.getElementById('s-product').value.trim();
-  const amount = parseFloat(document.getElementById('s-amount').value)||0;
-  const isCredit = document.getElementById('s-credit-chk').checked;
-  const cname = document.getElementById('s-cname').value.trim();
-  const cphone = document.getElementById('s-cphone').value.trim();
-  const caddr = document.getElementById('s-caddr').value.trim();
-  if (!product) { showToast('Product ka naam likho!','error'); return; }
-  if (!amount||amount<=0) { showToast('Amount likho!','error'); return; }
-  if (isCredit&&!cname) { showToast('Udhar mein customer naam zaroor!','error'); return; }
-  if (isCredit&&!cphone) { showToast('Udhar mein phone number zaroor!','error'); return; }
-  const rec = { date:todayStr(), time:timeStr(), product, amount, type:isCredit?'Credit':'Cash', cname:isCredit?cname:'', cphone:isCredit?cphone:'', caddr:isCredit?caddr:'', addedBy:currentUser.name, createdAt:firebase.firestore.FieldValue.serverTimestamp() };
+// ========== PAYMENT TYPE ==========
+function selectPayType(type,el){
+  selectedPayType=type;
+  document.querySelectorAll('.pay-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  const cf=document.getElementById('credit-fields');
+  cf.classList.toggle('show',type==='Credit');
+}
+
+// ========== ADD RECORDS ==========
+function addSale(){
+  const product=document.getElementById('s-product').value.trim();
+  const amount=parseFloat(document.getElementById('s-amount').value)||0;
+  const isCredit=selectedPayType==='Credit';
+  const cname=document.getElementById('s-cname').value.trim();
+  const cphone=document.getElementById('s-cphone').value.trim();
+  const caddr=document.getElementById('s-caddr').value.trim();
+  if(!product){showToast('Product ka naam likho!','error');return;}
+  if(!amount||amount<=0){showToast('Amount likho!','error');return;}
+  if(isCredit&&!cname){showToast('Udhar mein customer naam zaroor!','error');return;}
+  if(isCredit&&!cphone){showToast('Udhar mein phone zaroor!','error');return;}
+  const rec={date:todayStr(),time:timeStr(),product,amount,type:selectedPayType,cname:isCredit?cname:'',cphone:isCredit?cphone:'',caddr:isCredit?caddr:'',addedBy:currentUser.name,createdAt:firebase.firestore.FieldValue.serverTimestamp()};
   db.collection('daily_sales').add(rec)
-    .then(()=>{ showToast('Sale add ho gayi! ✓','success'); clearSaleForm(); })
-    .catch(()=>{ sales.unshift({...rec,id:'L'+Date.now(),createdAt:{seconds:Date.now()/1000}}); renderAll(); showToast('Saved locally!','success'); clearSaleForm(); });
+    .then(()=>{showToast('Sale add ho gayi! ✓','success');clearSaleForm();})
+    .catch(()=>{sales.unshift({...rec,id:'L'+Date.now(),createdAt:{seconds:Date.now()/1000}});renderAll();showToast('Saved!','success');clearSaleForm();});
 }
 
-function clearSaleForm() {
-  ['s-product','s-amount','s-cname','s-cphone','s-caddr'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('s-credit-chk').checked=false;
+function clearSaleForm(){
+  document.getElementById('s-product').value='';
+  document.getElementById('s-amount').value='';
+  document.getElementById('s-cname').value='';
+  document.getElementById('s-cphone').value='';
+  document.getElementById('s-caddr').value='';
+  selectedPayType='Cash';
+  document.querySelectorAll('.pay-pill').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.pay-pill.cash').classList.add('active');
   document.getElementById('credit-fields').classList.remove('show');
 }
 
-function addExpense() {
-  const title = document.getElementById('e-title').value.trim();
-  const amount = parseFloat(document.getElementById('e-amount').value)||0;
-  const cat = document.getElementById('e-cat').value;
-  if (!title) { showToast('Expense ka naam likho!','error'); return; }
-  if (!amount||amount<=0) { showToast('Amount likho!','error'); return; }
-  const rec = { date:todayStr(), time:timeStr(), title, amount, category:cat, addedBy:currentUser.name, createdAt:firebase.firestore.FieldValue.serverTimestamp() };
+function addExpense(){
+  const title=document.getElementById('e-title').value.trim();
+  const amount=parseFloat(document.getElementById('e-amount').value)||0;
+  const cat=document.getElementById('e-cat').value;
+  if(!title){showToast('Kharche ka naam likho!','error');return;}
+  if(!amount||amount<=0){showToast('Amount likho!','error');return;}
+  const rec={date:todayStr(),time:timeStr(),title,amount,category:cat,addedBy:currentUser.name,createdAt:firebase.firestore.FieldValue.serverTimestamp()};
   db.collection('daily_expenses').add(rec)
-    .then(()=>{ showToast('Expense add ho gaya! ✓','success'); document.getElementById('e-title').value=''; document.getElementById('e-amount').value=''; })
-    .catch(()=>{ expenses.unshift({...rec,id:'L'+Date.now(),createdAt:{seconds:Date.now()/1000}}); renderAll(); showToast('Saved locally!','success'); document.getElementById('e-title').value=''; document.getElementById('e-amount').value=''; });
+    .then(()=>{showToast('Kharcha add ho gaya! ✓','success');document.getElementById('e-title').value='';document.getElementById('e-amount').value='';})
+    .catch(()=>{expenses.unshift({...rec,id:'L'+Date.now(),createdAt:{seconds:Date.now()/1000}});renderAll();showToast('Saved!','success');document.getElementById('e-title').value='';document.getElementById('e-amount').value='';});
 }
 
-function addWholesale() {
-  const supplier = document.getElementById('w-supplier').value.trim();
-  const amount = parseFloat(document.getElementById('w-amount').value)||0;
-  const items = document.getElementById('w-items').value.trim();
-  const type = document.getElementById('w-type').value;
-  const date = document.getElementById('w-date').value||todayStr();
-  if (!supplier) { showToast('Supplier naam likho!','error'); return; }
-  if (!amount||amount<=0) { showToast('Amount likho!','error'); return; }
-  const rec = { date, supplier, items, amount, type, addedBy:currentUser.name, createdAt:firebase.firestore.FieldValue.serverTimestamp() };
+function addWholesale(){
+  const supplier=document.getElementById('w-supplier').value.trim();
+  const amount=parseFloat(document.getElementById('w-amount').value)||0;
+  const items=document.getElementById('w-items').value.trim();
+  const type=document.getElementById('w-type').value;
+  const date=document.getElementById('w-date').value||todayStr();
+  if(!supplier){showToast('Supplier naam likho!','error');return;}
+  if(!amount||amount<=0){showToast('Amount likho!','error');return;}
+  const rec={date,supplier,items,amount,type,addedBy:currentUser.name,createdAt:firebase.firestore.FieldValue.serverTimestamp()};
   db.collection('wholesale').add(rec)
-    .then(()=>{ showToast('Purchase add ho gayi! ✓','success'); document.getElementById('w-supplier').value=''; document.getElementById('w-amount').value=''; document.getElementById('w-items').value=''; })
-    .catch(()=>{ wholesale.unshift({...rec,id:'L'+Date.now()}); renderWholesalePage(); showToast('Saved locally!','success'); });
+    .then(()=>{showToast('Purchase add ho gayi! ✓','success');document.getElementById('w-supplier').value='';document.getElementById('w-amount').value='';document.getElementById('w-items').value='';})
+    .catch(()=>{wholesale.unshift({...rec,id:'L'+Date.now()});renderWholesalePage();showToast('Saved!','success');});
 }
 
-function deleteSale(id) {
-  if (!confirm('Delete?')) return;
-  db.collection('daily_sales').doc(id).delete().catch(()=>{ sales=sales.filter(s=>s.id!==id); renderAll(); });
-  showToast('Deleted','success');
-}
-function deleteExpense(id) {
-  if (!confirm('Delete?')) return;
-  db.collection('daily_expenses').doc(id).delete().catch(()=>{ expenses=expenses.filter(e=>e.id!==id); renderAll(); });
-  showToast('Deleted','success');
-}
+function deleteSale(id){if(!confirm('Delete?'))return;db.collection('daily_sales').doc(id).delete().catch(()=>{sales=sales.filter(s=>s.id!==id);renderAll();});showToast('Deleted','success');}
+function deleteExpense(id){if(!confirm('Delete?'))return;db.collection('daily_expenses').doc(id).delete().catch(()=>{expenses=expenses.filter(e=>e.id!==id);renderAll();});showToast('Deleted','success');}
 
-function renderAll() {
-  const td = todayStr(), yd = yesterdayStr();
-  const ts = sales.filter(s=>s.date===td), ys = sales.filter(s=>s.date===yd);
-  const te = expenses.filter(e=>e.date===td), ye = expenses.filter(e=>e.date===yd);
-  const tsT=ts.reduce((a,s)=>a+s.amount,0), teT=te.reduce((a,e)=>a+e.amount,0);
-  const ysT=ys.reduce((a,s)=>a+s.amount,0), yeT=ye.reduce((a,e)=>a+e.amount,0);
+// ========== RENDER ==========
+function renderAll(){
+  const td=todayStr();
+  const ts=sales.filter(s=>s.date===td),te=expenses.filter(e=>e.date===td);
+  const tsT=ts.reduce((a,s)=>a+s.amount,0),teT=te.reduce((a,e)=>a+e.amount,0);
   const profit=tsT-teT;
-  const credit=ts.filter(s=>s.type==='Credit'), creditT=credit.reduce((a,s)=>a+s.amount,0);
-
+  const credit=ts.filter(s=>s.type==='Credit'),creditT=credit.reduce((a,s)=>a+s.amount,0);
   document.getElementById('t-sales').textContent=fmt(tsT);
   document.getElementById('t-sales-count').textContent=ts.length+' transactions';
   document.getElementById('t-exp').textContent=fmt(teT);
@@ -625,44 +581,25 @@ function renderAll() {
   document.getElementById('profit-card').className='stat-card '+(profit>=0?'green':'red');
   document.getElementById('t-credit').textContent=fmt(creditT);
   document.getElementById('t-credit-count').textContent=credit.length+' customers';
-
-  document.getElementById('cy-ts').textContent=fmt(tsT);
-  document.getElementById('cy-te').textContent=fmt(teT);
-  const tp=tsT-teT; document.getElementById('cy-tp').textContent=fmt(tp); document.getElementById('cy-tp').style.color=tp>=0?'var(--green)':'var(--red)';
-  document.getElementById('cy-ys').textContent=fmt(ysT);
-  document.getElementById('cy-ye').textContent=fmt(yeT);
-  const yp=ysT-yeT; document.getElementById('cy-yp').textContent=fmt(yp); document.getElementById('cy-yp').style.color=yp>=0?'var(--green)':'var(--red)';
-
   renderSaleCards('today-sales-list',ts,true);
   renderSaleCards('sale-page-list',ts,true);
-  renderSaleCards('yest-sales-list',ys,false);
   renderExpCards('today-exp-list',te,true);
   renderExpCards('exp-page-list',te,true);
-  renderExpCards('yest-exp-list',ye,false);
+  renderMonthly();
   renderCreditReport();
-
-  const tm=thisMonth(), lm=lastMonth();
-  const mS=sales.filter(s=>s.date&&s.date.startsWith(tm)).reduce((a,s)=>a+s.amount,0);
-  const mE=expenses.filter(e=>e.date&&e.date.startsWith(tm)).reduce((a,e)=>a+e.amount,0);
-  const mC=sales.filter(s=>s.date&&s.date.startsWith(tm)&&s.type==='Credit').reduce((a,s)=>a+s.amount,0);
-  const mW=wholesale.filter(w=>w.date&&w.date.startsWith(tm)).reduce((a,w)=>a+w.amount,0);
-  const lmS=sales.filter(s=>s.date&&s.date.startsWith(lm)).reduce((a,s)=>a+s.amount,0);
-  const lmE=expenses.filter(e=>e.date&&e.date.startsWith(lm)).reduce((a,e)=>a+e.amount,0);
-  document.getElementById('m-sales').textContent=fmt(mS);
-  document.getElementById('m-exp').textContent=fmt(mE);
-  const mp=mS-mE; document.getElementById('m-profit').textContent=fmt(mp); document.getElementById('m-profit').style.color=mp>=0?'var(--green)':'var(--red)';
-  document.getElementById('m-credit').textContent=fmt(mC);
-  document.getElementById('m-wholesale').textContent=fmt(mW);
-  document.getElementById('m-count').textContent=sales.filter(s=>s.date&&s.date.startsWith(tm)).length;
-  document.getElementById('lm-sales').textContent=fmt(lmS);
-  document.getElementById('lm-exp').textContent=fmt(lmE);
-  const lmp=lmS-lmE; document.getElementById('lm-profit').textContent=fmt(lmp); document.getElementById('lm-profit').style.color=lmp>=0?'var(--green)':'var(--red)';
+  if(currentUser?.role==='admin')renderHistory();
 }
 
-function renderSaleCards(elId, list, canDel) {
-  const el = document.getElementById(elId); if(!el) return;
-  if (!list.length) { el.innerHTML=`<div class="empty">Koi sale nahi.</div>`; return; }
-  el.innerHTML = list.map(s=>`
+function typeBadge(type){
+  if(type==='Credit')return`<span class="badge yellow">⚠️ Udhar</span>`;
+  if(type==='Account')return`<span class="badge cyan">🏦 Account</span>`;
+  return`<span class="badge green">💵 Cash</span>`;
+}
+
+function renderSaleCards(elId,list,canDel){
+  const el=document.getElementById(elId);if(!el)return;
+  if(!list.length){el.innerHTML=`<div class="empty">Koi sale nahi.</div>`;return;}
+  el.innerHTML=list.map(s=>`
     <div class="sale-row-card">
       <div class="sale-row-left">
         <div class="product">${s.product}</div>
@@ -670,16 +607,15 @@ function renderSaleCards(elId, list, canDel) {
       </div>
       <div class="sale-row-right">
         <div class="amount">${fmt(s.amount)}</div>
-        <div class="type"><span class="badge ${s.type==='Credit'?'yellow':'green'}">${s.type||'Cash'}</span>
-        ${canDel&&currentUser?.role==='admin'?`<button class="del-btn" onclick="deleteSale('${s.id}')">🗑</button>`:''}</div>
+        <div class="type">${typeBadge(s.type)}${canDel&&currentUser?.role==='admin'?`<button class="del-btn" onclick="deleteSale('${s.id}')">🗑</button>`:''}</div>
       </div>
     </div>`).join('');
 }
 
-function renderExpCards(elId, list, canDel) {
-  const el = document.getElementById(elId); if(!el) return;
-  if (!list.length) { el.innerHTML=`<div class="empty">Koi expense nahi.</div>`; return; }
-  el.innerHTML = list.map(e=>`
+function renderExpCards(elId,list,canDel){
+  const el=document.getElementById(elId);if(!el)return;
+  if(!list.length){el.innerHTML=`<div class="empty">Koi kharcha nahi.</div>`;return;}
+  el.innerHTML=list.map(e=>`
     <div class="sale-row-card">
       <div class="sale-row-left">
         <div class="product">${e.title}</div>
@@ -692,10 +628,87 @@ function renderExpCards(elId, list, canDel) {
     </div>`).join('');
 }
 
-function renderWholesalePage() {
-  const el = document.getElementById('wholesale-list'); if(!el) return;
-  if (!wholesale.length) { el.innerHTML=`<div class="empty">Koi wholesale purchase nahi.</div>`; return; }
-  el.innerHTML = wholesale.map(w=>`
+// ========== HISTORY (date-wise all days) ==========
+function setHistoryFilter(f,el){
+  historyFilter=f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  renderHistory();
+}
+
+function renderHistory(){
+  const el=document.getElementById('history-list');if(!el)return;
+  const monthVal=document.getElementById('history-month').value;
+  // Get all unique dates from sales+expenses
+  const allDates=new Set([
+    ...sales.filter(s=>s.date&&(!monthVal||s.date.startsWith(monthVal))).map(s=>s.date),
+    ...expenses.filter(e=>e.date&&(!monthVal||e.date.startsWith(monthVal))).map(e=>e.date)
+  ]);
+  const sortedDates=[...allDates].sort((a,b)=>b.localeCompare(a));
+  if(!sortedDates.length){el.innerHTML=`<div class="empty">Is mahine mein koi record nahi.</div>`;return;}
+  el.innerHTML=sortedDates.map(date=>{
+    const ds=historyFilter!=='expenses'?sales.filter(s=>s.date===date):[];
+    const de=historyFilter!=='sales'?expenses.filter(e=>e.date===date):[];
+    const dsT=ds.reduce((a,s)=>a+s.amount,0);
+    const deT=de.reduce((a,e)=>a+e.amount,0);
+    const profit=dsT-deT;
+    const id='date-'+date.replace(/-/g,'');
+    return`<div class="date-section">
+      <div class="date-header" onclick="toggleDate('${id}')">
+        <div class="date-header-left">${fmtDateLabel(date)}</div>
+        <div class="date-header-right">
+          <span style="color:var(--green);font-weight:600">${fmt(dsT)}</span>
+          <span style="color:var(--red);font-weight:600">${fmt(deT)}</span>
+          <span style="color:${profit>=0?'var(--green)':'var(--red)'};font-weight:700">${fmt(profit)}</span>
+        </div>
+      </div>
+      <div class="date-content" id="${id}">
+        ${historyFilter!=='expenses'&&ds.length?`<div style="margin-bottom:8px;font-size:11px;color:var(--text3);padding:0 4px">SALES</div>`+ds.map(s=>`
+          <div class="sale-row-card">
+            <div class="sale-row-left"><div class="product">${s.product}</div><div class="meta">${s.time||''} ${s.cname?'· '+s.cname:''}</div></div>
+            <div class="sale-row-right"><div class="amount">${fmt(s.amount)}</div><div class="type">${typeBadge(s.type)}</div></div>
+          </div>`).join(''):''}
+        ${historyFilter!=='sales'&&de.length?`<div style="margin:8px 0 8px;font-size:11px;color:var(--text3);padding:0 4px">KHARCHE</div>`+de.map(e=>`
+          <div class="sale-row-card">
+            <div class="sale-row-left"><div class="product">${e.title}</div><div class="meta">${e.time||''} · <span class="badge blue" style="font-size:10px">${e.category||'General'}</span></div></div>
+            <div class="sale-row-right"><div class="amount" style="color:var(--red)">${fmt(e.amount)}</div></div>
+          </div>`).join(''):''}
+        ${!ds.length&&!de.length?'<div class="empty">Koi record nahi.</div>':''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleDate(id){
+  const el=document.getElementById(id);
+  if(el)el.classList.toggle('open');
+}
+
+// ========== MONTHLY ==========
+function renderMonthly(){
+  const tm=thisMonth(),lm=lastMonth();
+  const mS=sales.filter(s=>s.date&&s.date.startsWith(tm)).reduce((a,s)=>a+s.amount,0);
+  const mE=expenses.filter(e=>e.date&&e.date.startsWith(tm)).reduce((a,e)=>a+e.amount,0);
+  const mC=sales.filter(s=>s.date&&s.date.startsWith(tm)&&s.type==='Credit').reduce((a,s)=>a+s.amount,0);
+  const mW=wholesale.filter(w=>w.date&&w.date.startsWith(tm)).reduce((a,w)=>a+w.amount,0);
+  const lmS=sales.filter(s=>s.date&&s.date.startsWith(lm)).reduce((a,s)=>a+s.amount,0);
+  const lmE=expenses.filter(e=>e.date&&e.date.startsWith(lm)).reduce((a,e)=>a+e.amount,0);
+  const mp=mS-mE,lmp=lmS-lmE;
+  document.getElementById('m-sales').textContent=fmt(mS);
+  document.getElementById('m-exp').textContent=fmt(mE);
+  document.getElementById('m-profit').textContent=fmt(mp);document.getElementById('m-profit').style.color=mp>=0?'var(--green)':'var(--red)';
+  document.getElementById('m-credit').textContent=fmt(mC);
+  document.getElementById('m-wholesale').textContent=fmt(mW);
+  document.getElementById('m-count').textContent=sales.filter(s=>s.date&&s.date.startsWith(tm)).length;
+  document.getElementById('lm-sales').textContent=fmt(lmS);
+  document.getElementById('lm-exp').textContent=fmt(lmE);
+  document.getElementById('lm-profit').textContent=fmt(lmp);document.getElementById('lm-profit').style.color=lmp>=0?'var(--green)':'var(--red)';
+}
+
+function renderWholesalePage(){
+  const el=document.getElementById('wholesale-list');if(!el)return;
+  if(!wholesale.length){el.innerHTML=`<div class="empty">Koi wholesale purchase nahi.</div>`;return;}
+  el.innerHTML=wholesale.map(w=>`
     <div class="wholesale-item">
       <div class="wholesale-supplier">🏭 ${w.supplier}</div>
       <div class="wholesale-meta">${w.date} ${w.items?'· '+w.items:''}</div>
@@ -706,46 +719,43 @@ function renderWholesalePage() {
     </div>`).join('');
 }
 
-function renderCreditReport() {
-  const tb = document.getElementById('credit-report-body'); if(!tb) return;
-  const credits = sales.filter(s=>s.type==='Credit');
-  if (!credits.length) { tb.innerHTML=`<tr><td colspan="5" class="empty">Koi udhar nahi.</td></tr>`; return; }
-  tb.innerHTML = credits.map(s=>`<tr>
-    <td style="font-size:11px;color:var(--text3)">${s.date||''}</td>
-    <td style="font-weight:500">${s.product}</td>
-    <td style="color:var(--yellow);font-weight:600">${fmt(s.amount)}</td>
-    <td>${s.cname||'—'}</td>
-    <td style="font-size:12px">${s.cphone||'—'}</td>
+function renderCreditReport(){
+  const tb=document.getElementById('credit-report-body');if(!tb)return;
+  const credits=sales.filter(s=>s.type==='Credit');
+  const td='padding:9px 12px;font-size:12.5px;border-bottom:1px solid rgba(51,65,85,.4)';
+  if(!credits.length){tb.innerHTML=`<tr><td colspan="5" style="${td};text-align:center;color:var(--text3)">Koi udhar nahi.</td></tr>`;return;}
+  tb.innerHTML=credits.map(s=>`<tr>
+    <td style="${td};color:var(--text3)">${s.date||''}</td>
+    <td style="${td};font-weight:500">${s.product}</td>
+    <td style="${td};color:var(--yellow);font-weight:600">${fmt(s.amount)}</td>
+    <td style="${td}">${s.cname||'—'}</td>
+    <td style="${td}">${s.cphone||'—'}</td>
   </tr>`).join('');
 }
 
-function renderWholesaleReport() {
-  const tb = document.getElementById('wholesale-report-body'); if(!tb) return;
-  if (!wholesale.length) { tb.innerHTML=`<tr><td colspan="4" class="empty">Koi wholesale nahi.</td></tr>`; return; }
-  tb.innerHTML = wholesale.map(w=>`<tr>
-    <td style="font-size:11px;color:var(--text3)">${w.date||''}</td>
-    <td style="font-weight:500">${w.supplier}</td>
-    <td style="color:var(--yellow);font-weight:600">${fmt(w.amount)}</td>
-    <td><span class="badge ${w.type==='Cash'?'green':w.type==='Credit'?'yellow':'blue'}">${w.type}</span></td>
+function renderWholesaleReport(){
+  const tb=document.getElementById('wholesale-report-body');if(!tb)return;
+  const td='padding:9px 12px;font-size:12.5px;border-bottom:1px solid rgba(51,65,85,.4)';
+  if(!wholesale.length){tb.innerHTML=`<tr><td colspan="4" style="${td};text-align:center;color:var(--text3)">Koi wholesale nahi.</td></tr>`;return;}
+  tb.innerHTML=wholesale.map(w=>`<tr>
+    <td style="${td};color:var(--text3)">${w.date||''}</td>
+    <td style="${td};font-weight:500">${w.supplier}</td>
+    <td style="${td};color:var(--yellow);font-weight:600">${fmt(w.amount)}</td>
+    <td style="${td}"><span class="badge ${w.type==='Cash'?'green':w.type==='Credit'?'yellow':'blue'}">${w.type}</span></td>
   </tr>`).join('');
 }
 
-function toggleCredit() {
-  const chk=document.getElementById('s-credit-chk');
-  document.getElementById('credit-fields').classList.toggle('show',chk.checked);
-}
-
-const PAGE_TITLES = {today:'📅 Today',yesterday:'🕐 Yesterday',  'add-sale':'💵 Add Sale','add-expense':'💸 Add Expense',wholesale:'🏭 Wholesale',monthly:'📊 Monthly',reports:'📋 Reports'};
-
-function showPage(id, el) {
+// ========== PAGE NAV ==========
+const PAGE_TITLES={today:'📅 Today','add-sale':'💵 Sale Add Karo','add-expense':'💸 Kharcha Add Karo',wholesale:'🏭 Wholesale',history:'📆 Pichla Hisab',monthly:'📊 Monthly Summary',reports:'📋 Reports'};
+function showPage(id,el){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item,.bnav-item').forEach(n=>n.classList.remove('active'));
-  const pg=document.getElementById('page-'+id);
-  if(pg) pg.classList.add('active');
-  if(el) el.classList.add('active');
+  const pg=document.getElementById('page-'+id);if(pg)pg.classList.add('active');
+  if(el)el.classList.add('active');
   document.getElementById('page-title').textContent=PAGE_TITLES[id]||id;
-  if(id==='wholesale') renderWholesalePage();
+  if(id==='wholesale')renderWholesalePage();
   if(id==='reports'){renderCreditReport();renderWholesaleReport();}
+  if(id==='history')renderHistory();
 }
 
 let toastTimer;
