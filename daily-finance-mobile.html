@@ -169,7 +169,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .toast.error{border-color:var(--red);color:var(--red)}
 
 /* ADMIN ONLY */
-.admin-section{display:none}
+.admin-section{display:none !important}
+.admin-section.show{display:flex !important}
+.admin-section.show-block{display:block !important}
 
 @media(min-width:640px){
   .sidebar{display:flex}.bottom-nav{display:none}.main{margin-left:200px;padding-bottom:20px}
@@ -459,7 +461,7 @@ function doLogin() {
   const hm=document.getElementById('history-month');
   const d=new Date(); hm.value=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
   if(u.role==='admin'){
-    document.querySelectorAll('.admin-section').forEach(el=>el.style.display='');
+    document.querySelectorAll('.admin-section').forEach(el=>{ if(el.classList.contains('nav-item')||el.classList.contains('bnav-item')){el.style.setProperty('display','flex','important');}else{el.style.setProperty('display','block','important');}});
   }
   loadData();
 }
